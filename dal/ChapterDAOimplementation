@@ -1,17 +1,31 @@
 package dal;
 
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import model.Chapter;
 
 public class ChapterDAOimplementation implements ChapterDAO {
 
     @Override
     public boolean addChapter(Chapter chapter) {
-        return false;
+        String sql = "INSERT INTO chapters (title) VALUES (?)";
+
+        try (Connection con = DBconnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, chapter.getTitle());
+
+            return ps.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
-    public List<Chapter> getAllChapters() {
+    public java.util.List<Chapter> getAllChapters() {
         return null;
     }
 
