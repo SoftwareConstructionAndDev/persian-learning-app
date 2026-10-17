@@ -28,6 +28,15 @@ public class ChapterBO {
         return chapterDAO.getAllChapters();
     }
 
+    public Chapter getChapterById(int chapterId) {
+        if (chapterId <= 0) {
+            return null;
+        }
+
+        return chapterDAO.getChapterById(chapterId);
+    }
+    
+    
     public boolean updateChapter(ChapterDTO dto) {
         if (dto == null || dto.getTitle() == null || dto.getTitle().trim().isEmpty()) {
             return false;
