@@ -1,0 +1,32 @@
+package dal;
+
+import java.util.List;
+import model.Chapter;
+
+public class ChapterDAOimplementation implements ChapterDAO {
+
+    @Override
+    public boolean addChapter(Chapter chapter) {
+        return false;
+    }
+
+    @Override
+    public List<Chapter> getAllChapters() {
+        return null;
+    }
+
+    @Override
+    public Chapter getChapterById(int chapterId) {
+        return null;
+    }
+
+    @Override
+    public boolean updateChapter(Chapter chapter) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteChapter(int chapterId) {
+        return false;
+    }
+}
