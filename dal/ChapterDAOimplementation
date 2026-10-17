@@ -96,8 +96,20 @@ public boolean updateChapter(Chapter chapter) {
     }
 }
 
-    @Override
-    public boolean deleteChapter(int chapterId) {
+@Override
+public boolean deleteChapter(int chapterId) {
+    String sql = "DELETE FROM chapters WHERE chapter_id = ?";
+
+    try (Connection con = DBconnection.getConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        ps.setInt(1, chapterId);
+
+        return ps.executeUpdate() > 0;
+
+    } catch (SQLException e) {
+        e.printStackTrace();
         return false;
     }
+}
 }
