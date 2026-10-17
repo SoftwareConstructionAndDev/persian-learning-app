@@ -21,6 +21,10 @@ public class ChapterFacade {
         return chapterBO.getAllChapters();
     }
 
+    public Chapter getChapterById(int chapterId) {
+        return chapterBO.getChapterById(chapterId);
+    }
+
     public boolean updateChapter(ChapterDTO dto) {
         return chapterBO.updateChapter(dto);
     }
