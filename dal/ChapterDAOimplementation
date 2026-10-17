@@ -51,10 +51,32 @@ public List<Chapter> getAllChapters() {
 }
 
 
-    @Override
-    public Chapter getChapterById(int chapterId) {
-        return null;
+
+@Override
+public Chapter getChapterById(int chapterId) {
+    String sql = "SELECT chapter_id, title FROM chapters WHERE chapter_id = ?";
+
+    try (Connection con = DBconnection.getConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        ps.setInt(1, chapterId);
+
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                Chapter chapter = new Chapter();
+                chapter.setChapterId(rs.getInt("chapter_id"));
+                chapter.setTitle(rs.getString("title"));
+                return chapter;
+            }
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+
+    return null;
+}
+
 
     @Override
     public boolean updateChapter(Chapter chapter) {
