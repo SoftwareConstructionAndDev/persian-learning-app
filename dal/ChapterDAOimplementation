@@ -78,10 +78,23 @@ public Chapter getChapterById(int chapterId) {
 }
 
 
-    @Override
-    public boolean updateChapter(Chapter chapter) {
+@Override
+public boolean updateChapter(Chapter chapter) {
+    String sql = "UPDATE chapters SET title = ? WHERE chapter_id = ?";
+
+    try (Connection con = DBconnection.getConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+
+        ps.setString(1, chapter.getTitle());
+        ps.setInt(2, chapter.getChapterId());
+
+        return ps.executeUpdate() > 0;
+
+    } catch (SQLException e) {
+        e.printStackTrace();
         return false;
     }
+}
 
     @Override
     public boolean deleteChapter(int chapterId) {
