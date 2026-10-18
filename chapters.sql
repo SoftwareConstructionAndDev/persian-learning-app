@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 18, 2026 at 12:13 PM
+-- Generation Time: Oct 18, 2026 at 12:29 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.3.0
 
@@ -37,9 +37,9 @@ CREATE TABLE `chapters` (
 --
 
 INSERT INTO `chapters` (`chapter_id`, `title`) VALUES
-(1, 'Persian Numbers'),
-(2, 'Introduction to Persian'),
-(3, 'Persian Alphabet'),
+(1, 'Introduction to Persian'),
+(2, 'Persian Alphabets'),
+(3, 'Persian Numbers'),
 (4, 'Basic Persian Words');
 
 --
