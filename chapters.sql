@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 17, 2026 at 09:40 PM
+-- Generation Time: Oct 18, 2026 at 12:13 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.3.0
 
@@ -37,13 +37,10 @@ CREATE TABLE `chapters` (
 --
 
 INSERT INTO `chapters` (`chapter_id`, `title`) VALUES
-(1, 'Updated DAO Test Chapter'),
-(3, 'Persian Vocabulary'),
-(16, 'Facade Test Chapter'),
-(20, 'DAO Test Chapter'),
-(31, 'Introduction to Persian'),
-(32, 'Persian Alphabet'),
-(33, 'Basic Persian Words');
+(1, 'Persian Numbers'),
+(2, 'Introduction to Persian'),
+(3, 'Persian Alphabet'),
+(4, 'Basic Persian Words');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +60,7 @@ ALTER TABLE `chapters`
 -- AUTO_INCREMENT for table `chapters`
 --
 ALTER TABLE `chapters`
-  MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `chapter_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
