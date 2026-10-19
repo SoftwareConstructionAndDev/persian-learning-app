@@ -1,4 +1,3 @@
-
 package dal;
 
 import java.sql.Connection;
@@ -7,9 +6,9 @@ import java.sql.SQLException;
 
 public class DBconnection {
 
-    private static final String URL = "jdbc:mysql://localhost:8889/persian_language_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/persian_language_db";
     private static final String USER = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
