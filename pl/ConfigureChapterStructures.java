@@ -37,7 +37,7 @@ public class ConfigureChapterStructures
                 ComponentType.EXERCISE, ComponentType.GLOSSARY);
 
         configure(facade, chapterDAO, "Introduction to Persian", introduction);
-        configure(facade, chapterDAO, "Persian Alphabet", alphabetAndNumbers);
+        configure(facade, chapterDAO, "Persian Alphabets", alphabetAndNumbers);
         configure(facade, chapterDAO, "Persian Numbers", alphabetAndNumbers);
         configure(facade, chapterDAO, "Basic Persian Words", basicWords);
     }
